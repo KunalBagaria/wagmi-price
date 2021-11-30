@@ -1,8 +1,11 @@
-import express, { Request, Response} from 'express';
-import rateLimit from "express-rate-limit";
+import express, { Request, Response} from 'express'
+import rateLimit from "express-rate-limit"
 import axios from 'axios'
+import cors from 'cors'
 
 const app = express();
+
+app.use(cors())
 
 const apiLimiter = rateLimit({
     windowMs: 60 * 1000, // 1 minute
